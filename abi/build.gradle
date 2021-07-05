@@ -1,9 +1,5 @@
-plugins {
-    id 'com.jfrog.bintray'
-}
-
 description 'TRON Application Binary Interface (ABI) for working with smart contracts'
-
+apply from: '../JitPackUpload.gradle'
 dependencies {
     implementation project(':utils')
 }
@@ -21,31 +17,6 @@ publishing {
 }
 */
 
-bintray {
-    user = System.getenv('BINTRAY_USER_TRON')
-    key = System.getenv('BINTRAY_KEY_TRON')
-
-    configurations = ['archives']
-
-    pkg {
-        repo = 'tronj'
-        name = 'abi'
-        // userOrg = 'tronj'
-        // configurations = ['archives']
-        desc = description
-        websiteUrl = 'https://github.com/tronprotocol/tronj'
-        vcsUrl = 'https://github.com/tronprotocol/tronj.git'
-        licenses = ['Apache-2.0']
-        publish = true
-        publicDownloadNumbers = true
-        version {
-            afterEvaluate {
-                name = "${project.version}"
-                released = new Date()
-            }
-        }
-    }
-}
 
 tasks.create('buildLib', Jar) {
     baseName = 'tronj'

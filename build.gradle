@@ -1,6 +1,19 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+    }
+}
+
 plugins {
     id 'java-library'
-    id 'com.jfrog.bintray' apply false
     id 'signing'
 }
 
@@ -15,6 +28,7 @@ allprojects {
 
     repositories {
         jcenter()
+        google()
     }
 
 }
