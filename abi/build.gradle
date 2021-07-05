@@ -1,5 +1,5 @@
+apply plugin: 'java'
 description 'TRON Application Binary Interface (ABI) for working with smart contracts'
-apply from: '../JitPackUpload.gradle'
 dependencies {
     implementation project(':utils')
 }
@@ -31,3 +31,4 @@ tasks.create('buildLib', Jar) {
         }
     }
 }
+apply from: '../JitPackUpload.gradle'

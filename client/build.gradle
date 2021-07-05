@@ -1,7 +1,8 @@
-plugins {
+apply plugin: 'java'
+
+/*plugins {
     id 'com.google.protobuf' version '0.8.12'
-}
-apply from: '../JitPackUpload.gradle'
+}*/
 description 'Tronj gRPC client classes'
 
 dependencies {
@@ -23,19 +24,5 @@ dependencies {
     // implementation 'org.apache.tuweni:tuweni-bytes:0.8.2'
 }
 
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.12.0'
-    }
-    plugins {
-        grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.31.0'
-        }
-    }
-    generateProtoTasks {
-        all()*.plugins {
-            grpc { }
-        }
-    }
-    generatedFilesBaseDir = "$projectDir/src"
-}
+
+apply from: '../JitPackUpload.gradle'

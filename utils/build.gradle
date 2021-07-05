@@ -1,5 +1,6 @@
+apply plugin: 'java'
+
 description 'Minimal set of tronj utility classes'
-apply from: '../JitPackUpload.gradle'
 dependencies {
     implementation 'io.vertx:vertx-core:3.5.0.Beta1'
     implementation 'io.netty:netty-all:4.0.15.Final'
@@ -9,3 +10,4 @@ dependencies {
     // implementation 'org.apache.tuweni:tuweni-units:0.8.2'
 
 }
+//apply from: '../JitPackUpload.gradle'
